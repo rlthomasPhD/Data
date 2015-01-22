@@ -5,7 +5,7 @@ Tidy Mean
 column	description	type
 Subject	Identifier of the subject	integer
 Activity	Label of the activity	factor
-MeanSamples	Mean of variables by Subject + Activity provided in tidy	numeric
+MeanSamples	Mean of variables by Subject and Activity
 
 From data set
 
