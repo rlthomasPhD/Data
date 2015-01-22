@@ -1,13 +1,13 @@
 Code Book
 
-For the provided UCI HAR Dataset the following vars are set from run_analysis.R. See the README for additional details.
-
 Tidy Mean
 
 column	description	type
 Subject	Identifier of the subject	integer
 Activity	Label of the activity	factor
 MeanSamples	Mean of variables by Subject + Activity provided in tidy	numeric
+
+From data set
 
 tBodyAcc-XYZ
 tGravityAcc-XYZ
