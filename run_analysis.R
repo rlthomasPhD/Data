@@ -1,29 +1,22 @@
-library(plyr)
-library(reshape2)
-
-## Goals
 ## 1. each variable should be in one column
 ## 2. each observation of that variable should be in a diferent row
 ## 3. include ids to link tables together
-
 ## Merges the training and the test sets to create one data set.
+
+library(plyr)
+library(reshape2)
 
 root.dir <- "UCI HAR Dataset"
 data.set <- list()
 
-message("loading features.txt")
 data.set$features <- read.table(paste(root.dir, "features.txt", sep="/"), col.names=c('id', 'name'), stringsAsFactors=FALSE)
 
-message("loading activity_features.txt")
 data.set$activity_labels <- read.table(paste(root.dir, "activity_labels.txt", sep="/"), col.names=c('id', 'Activity'))
 
-
-message("loading test set")
 data.set$test <- cbind(subject=read.table(paste(root.dir, "test", "subject_test.txt", sep="/"), col.names="Subject"),
                        y=read.table(paste(root.dir, "test", "y_test.txt", sep="/"), col.names="Activity.ID"),
                        x=read.table(paste(root.dir, "test", "x_test.txt", sep="/")))
 
-message("loading train set")
 data.set$train <- cbind(subject=read.table(paste(root.dir, "train", "subject_train.txt", sep="/"), col.names="Subject"),
                         y=read.table(paste(root.dir, "train", "y_train.txt", sep="/"), col.names="Activity.ID"),
                         x=read.table(paste(root.dir, "train", "X_train.txt", sep="/")))
